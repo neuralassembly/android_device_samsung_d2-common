@@ -36,14 +36,6 @@ SectionUseCase."VoIP3" {
 File "VoIP3"
 Comment "VOIP3 Call use case"
 }
-SectionUseCase."VoIP4" {
-File "VoIP4"
-Comment "VOIP4 Call use case"
-}
-SectionUseCase."VoIP5" {
-File "VoIP5"
-Comment "VOIP5 Call use case"
-}
 SectionUseCase."Loopback" {
 File "Loopback"
 Comment "Loopback use case"

@@ -52,8 +52,8 @@ on emmc-fs
    exec /system/bin/sh /system/etc/init.qcom.modem_links.sh
    exec /system/bin/sh /system/etc/init.qcom.mdm_links.sh
 
-on post-fs
-   mount ext4 /dev/block/mmcblk0p14 /system ro remount barrier=1
+#on post-fs
+#   mount ext4 /dev/block/mmcblk0p14 /system ro remount barrier=1
 
 on boot
    write /sys/devices/i2c-3/3-0024/cyttsp_update_fw 1
@@ -90,8 +90,3 @@ service bugreport /system/bin/bugmailer.sh -v
 	oneshot
 	keycodes 114 115 116
 	
-# TVout
-service TvoutService_C /system/bin/bintvoutservice
-     class main
-     user system
-     group graphics	

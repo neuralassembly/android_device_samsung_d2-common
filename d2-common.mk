@@ -48,8 +48,20 @@ PRODUCT_COPY_FILES += \
 	device/samsung/d2-common/snd_soc_msm/VoIP4:system/etc/snd_soc_msm/VoIP4 \
 	device/samsung/d2-common/snd_soc_msm/VoIP5:system/etc/snd_soc_msm/VoIP5
 
+PRODUCT_COPY_FILES += \
+	frameworks/base/data/fonts/MTLmr3m.ttf:system/fonts/MTLmr3m.ttf \
+	device/samsung/d2-common/fallback_fonts.xml:system/vendor/etc/fallback_fonts.xml \
+	device/samsung/d2-common/apns-conf.xml:system/etc/apns-conf.xml \
+
+
+PRODUCT_PACKAGES += \
+    bootsound \
+    stagefright
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
+    device/samsung/d2-common/ramdisk/check-sysimage.sh:root/check-sysimage.sh \
+    device/samsung/d2-common/ramdisk/init.rc:root/init.rc \
     device/samsung/d2-common/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/samsung/d2-common/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
     device/samsung/d2-common/ramdisk/init.qcom.sh:root/init.qcom.sh \

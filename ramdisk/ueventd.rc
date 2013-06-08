@@ -42,7 +42,7 @@
 /dev/graphics/*           0660   system     graphics
 /dev/msm_hw3dm            0660   system     graphics
 /dev/msm_rotator          0660   system     graphics
-/dev/input/*              0660   root       input
+/dev/input/*              0666   root       input
 /dev/eac                  0660   root       audio
 /dev/cam                  0660   root       camera
 /dev/pmem                 0660   system     graphics
@@ -193,3 +193,16 @@
 
 # for PL2303 driver
 /dev/ttyUSB0           0666   system   	 system
+
+
+# for felica
+/dev/felica            0666    root            root
+/dev/felica_pon                0666    root            root
+/dev/felica_cen                0666    root            root
+/dev/felica_rfs                0444    root            root
+/dev/felica_rws                0666    root            root
+/dev/felica_ant                0666    root            root
+/dev/felica_int_poll   0400    root            root
+/dev/felica_uid                0222    root            root
+# for felica end
+

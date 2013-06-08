@@ -1,4 +1,5 @@
 on early-init
+    mkdir /mnt 0775 root system
     mkdir /mnt/sdcard 0000 system system
     # for backwards compatibility
     symlink /mnt/sdcard /sdcard
@@ -33,7 +34,11 @@ on early-fs
 on emmc-fs
 # mount mmc partitions
     wait /dev/block/mmcblk0p14
-    mount ext4 /dev/block/mmcblk0p14 /system ro barrier=1
+    mount ext4 /dev/block/mmcblk0p14 /system rw barrier=1
+    chmod 0755 /system/b2g/b2g
+    chmod 0755 /system/b2g/plugin-container
+    chmod 0755 /system/b2g/updater
+
     wait /dev/block/mmcblk0p15
     exec /system/bin/e2fsck -p /dev/block/mmcblk0p15
     mount ext4 /dev/block/mmcblk0p15 /data nosuid nodev noatime barrier=1 discard,noauto_da_alloc,journal_async_commit
@@ -82,6 +87,9 @@ on emmc-fs
 
 # wifi
     mkdir /efs/wifi 0775 system system
+    write /data/.cid.info murata
+    chown root root /data/.cid.info
+    chmod 0666 /data/.cid.info
 
 # Permission for fast dormacy for RIL
     chown system radio /sys/devices/virtual/sec/bamdmux/waketime

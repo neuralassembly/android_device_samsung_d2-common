@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Vendor-provided fallback fonts
+
+    This file can be edited to add references to fonts that are not installed or referenced in the
+    default system. The file should then be placed in /vendor/etc/fallback_fonts.xml.
+    See /system/etc/system_fonts.xml and /system/etc/fallback_fonts.xml for more information
+    and to understand the order in which the default system fonts are loaded and structured for
+    lookup.
+-->
+
+<familyset>
+    <family order="0">
+        <fileset>
+            <file>MTLmr3m.ttf</file>
+        </fileset>
+    </family>
+</familyset>
+
